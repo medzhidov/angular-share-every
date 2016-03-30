@@ -9,15 +9,16 @@ window.share = (function(){
         twitter: 'https://twitter.com/intent/tweet?url=$URL$&text=$TEXT$&hashtags=$TAG$',
         telegram: 'https://telegram.me/share/url?url=$URL$&text=$TEXT$',
         evernote: 'http://www.evernote.com/clip.action?url=$URL$&title=$TITLE$',
+        odnoklassniki: 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments=$TEXT$&st._surl=$URL$',
     };
 
     var getLink = function(social, url, title, text, image, tag){
         var link = socials[social];
-        if (url)    link = link.replace('$URL$', url);
-        if (title)  link = link.replace('$TITLE$', title);
-        if (text)   link = link.replace('$TEXT$', text);
-        if (image)  link = link.replace('$IMAGE$', image);
-        if (tag)    link = link.replace('$TAG$', tag);
+        if (url != undefined)    link = link.replace('$URL$', url);
+        if (title != undefined)  link = link.replace('$TITLE$', title);
+        if (text != undefined)   link = link.replace('$TEXT$', text);
+        if (image != undefined)  link = link.replace('$IMAGE$', image);
+        if (tag != undefined)    link = link.replace('$TAG$', tag);
         console.log(link);
         return link;
     };
@@ -37,3 +38,22 @@ window.share = (function(){
         open: open
     };
 })();
+
+
+// Add listeners
+document.addEventListener("DOMContentLoaded", function(){
+    for( let el of document.querySelectorAll('[share]') ){
+        el.addEventListener('click', function(){
+            var social = this.getAttribute('share'),
+            url = this.getAttribute('share-url') ?this.getAttribute('share-url') : '',
+            title = this.getAttribute('share-title') ? this.getAttribute('share-title') : '',
+            text = this.getAttribute('share-text') ? this.getAttribute('share-text') : '',
+            image = this.getAttribute('share-image') ? this.getAttribute('share-image') : '',
+            tag = this.getAttribute('share-tag') ? this.getAttribute('share-tag') : '';
+
+            if(social){
+                window.share.openLink(social, url, title, text, image, tag);
+            }
+        });
+    }
+});
