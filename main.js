@@ -12,10 +12,11 @@ window.share = (function(){
         odnoklassniki: 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments=$TEXT$&st._surl=$URL$',
     };
 
-    var getLink = function(social, url, title, text, image, tag){
+    var getLink = function(social, url, title, subtitle, text, image, tag){
         var link = socials[social];
         if (url != undefined)    link = link.replace('$URL$', url);
         if (title != undefined)  link = link.replace('$TITLE$', title);
+        if (subtitle != undefined)  link = link.replace('$SUBTITLE$', subtitle);
         if (text != undefined)   link = link.replace('$TEXT$', text);
         if (image != undefined)  link = link.replace('$IMAGE$', image);
         if (tag != undefined)    link = link.replace('$TAG$', tag);
@@ -27,8 +28,8 @@ window.share = (function(){
         window.open(link,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600')
     };
 
-    var openLink = function(social, url, title, text, image, tag){
-        var link = getLink(social, url, title, text, image, tag);
+    var openLink = function(social, url, title, subtitle, text, image, tag){
+        var link = getLink(social, url, title, subtitle, text, image, tag);
         open(link);
     }
 
@@ -47,12 +48,13 @@ document.addEventListener("DOMContentLoaded", function(){
             var social = this.getAttribute('share'),
             url = this.getAttribute('share-url') ?this.getAttribute('share-url') : '',
             title = this.getAttribute('share-title') ? this.getAttribute('share-title') : '',
+            subtitle = this.getAttribute('share-subtitle') ? this.getAttribute('share-subtitle') : '',
             text = this.getAttribute('share-text') ? this.getAttribute('share-text') : '',
             image = this.getAttribute('share-image') ? this.getAttribute('share-image') : '',
             tag = this.getAttribute('share-tag') ? this.getAttribute('share-tag') : '';
 
             if(social){
-                window.share.openLink(social, url, title, text, image, tag);
+                window.share.openLink(social, url, title, subtitle, text, image, tag);
             }
         });
     }
