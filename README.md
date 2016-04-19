@@ -42,3 +42,10 @@ Add next attributes for element in order to create share on click for this eleme
 
 > *share-tag* - tag for share _in some socials_  
 **values:** string
+
+
+## Example
+
+```Html
+<button share="vk" share-title="Just" share-text="SHARE IT!" share-url="https://github.com/dslpp056193/share-everithing">Share!</button>
+```
