@@ -9,7 +9,6 @@ Supported:
 -  Twitter
 -  Telegram
 -  Evernote
--  
 
 ## Advantages
 For share each element has unique:
