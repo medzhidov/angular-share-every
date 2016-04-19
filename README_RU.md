@@ -41,3 +41,9 @@
 
 > *share-tag* - тег _для некоторых соц. сетей_  
 **Значения:** строка
+
+## Пример
+
+```Html
+<button share="vk" share-title="Просто" share-text="ПОДЕЛИСЬ!" share-url="https://github.com/dslpp056193/share-everithing">Поделиться!</button>
+```
