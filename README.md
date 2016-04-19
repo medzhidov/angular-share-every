@@ -9,6 +9,15 @@ Supported:
 -  Twitter
 -  Telegram
 -  Evernote
+-  
+
+## Advantages
+For share each element has unique:
+- title
+- subtitle
+- text
+- image
+- tags
 
 ## How to use
 Add next attributes for element in order to create share on click for this element:
@@ -28,8 +37,8 @@ Add next attributes for element in order to create share on click for this eleme
 > *share-text* - short text for share  
 **values:** string
 
-> *share-text* - image for share  
+> *share-image* - image for share  
 **values:** full link with domain
 
 > *share-tag* - tag for share _in some socials_  
-**values:** full link with domain
+**values:** string
