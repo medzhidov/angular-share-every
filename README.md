@@ -5,7 +5,7 @@ Supported:
 
 -  Vk
 -  Facebook
--  Odnoclassniki
+-  Odnoklassniki
 -  Twitter
 -  Telegram
 -  Evernote
