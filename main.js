@@ -5,7 +5,7 @@
 window.share = (function(){
     var socials = {
         vk: 'https://vk.com/share.php?url=$URL$&title=$TITLE$&description=$TEXT$&image=$IMAGE$',
-        facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=NAME&caption=$SUBTITLE$&description=$TEXT$&redirect_uri=https://www.facebook.com&display=popup',
+        facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=$TITLE$&caption=$SUBTITLE$&description=$TEXT$&redirect_uri=https://www.facebook.com&display=popup',
         twitter: 'https://twitter.com/intent/tweet?url=$URL$&text=$TEXT$&hashtags=$TAG$',
         telegram: 'https://telegram.me/share/url?url=$URL$&text=$TEXT$',
         evernote: 'http://www.evernote.com/clip.action?url=$URL$&title=$TITLE$',
@@ -14,12 +14,12 @@ window.share = (function(){
 
     var getLink = function(social, url, title, subtitle, text, image, tag){
         var link = socials[social];
-        if (url != undefined)    link = link.replace('$URL$', url);
-        if (title != undefined)  link = link.replace('$TITLE$', title);
-        if (subtitle != undefined)  link = link.replace('$SUBTITLE$', subtitle);
-        if (text != undefined)   link = link.replace('$TEXT$', text);
-        if (image != undefined)  link = link.replace('$IMAGE$', image);
-        if (tag != undefined)    link = link.replace('$TAG$', tag);
+        if (url != undefined)    link = link.replace('$URL$', encodeURIComponent(url));
+        if (title != undefined)  link = link.replace('$TITLE$', encodeURIComponent(title));
+        if (subtitle != undefined)  link = link.replace('$SUBTITLE$', encodeURIComponent(subtitle));
+        if (text != undefined)   link = link.replace('$TEXT$', encodeURIComponent(text));
+        if (image != undefined)  link = link.replace('$IMAGE$', encodeURIComponent(image));
+        if (tag != undefined)    link = link.replace('$TAG$', encodeURIComponent(tag));
         console.log(link);
         return link;
     };
