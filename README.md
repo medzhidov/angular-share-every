@@ -1,4 +1,4 @@
-# share-everithing
+# Share javascript plugin, for share everything
     custom share plugin
 
 Supported:
