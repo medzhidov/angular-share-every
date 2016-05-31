@@ -8,7 +8,7 @@ tApp.directive('ngShare', [function(){
         link: function ($scope, element, attrs){
             var socials = {
                 vk: 'https://vk.com/share.php?url=$URL$&title=$TITLE$&description=$TEXT$&image=$IMAGE$',
-                facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=NAME&caption=$SUBTITLE$&description=$TEXT$&redirect_uri=https://www.facebook.com&display=popup',
+                facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=$TITLE$&caption=$SUBTITLE$&description=$TEXT$&redirect_uri=https://www.facebook.com&display=popup',
                 twitter: 'https://twitter.com/intent/tweet?url=$URL$&text=$TEXT$&hashtags=$TAG$',
                 telegram: 'https://telegram.me/share/url?url=$URL$&text=$TEXT$',
                 evernote: 'http://www.evernote.com/clip.action?url=$URL$&title=$TITLE$',
@@ -30,12 +30,12 @@ tApp.directive('ngShare', [function(){
                 var link = socials[social];
                 console.log($scope.url);
 
-                if ($scope.url)    link = link.replace('$URL$', $scope.url);
-                if ($scope.title)  link = link.replace('$TITLE$', $scope.title);
-                if ($scope.subtitle)  link = link.replace('$SUBTITLE$', $scope.subtitle);
-                if ($scope.text)   link = link.replace('$TEXT$', $scope.text);
-                if ($scope.image)  link = link.replace('$IMAGE$', $scope.image);
-                if ($scope.tag)    link = link.replace('$TAG$', $scope.tag);
+                if ($scope.url)    link = link.replace('$URL$', encodeURIComponent($scope.url));
+                if ($scope.title)  link = link.replace('$TITLE$', encodeURIComponent($scope.title));
+                if ($scope.subtitle)  link = link.replace('$SUBTITLE$', encodeURIComponent($scope.subtitle));
+                if ($scope.text)   link = link.replace('$TEXT$', encodeURIComponent($scope.text));
+                if ($scope.image)  link = link.replace('$IMAGE$', encodeURIComponent($scope.image));
+                if ($scope.tag)    link = link.replace('$TAG$', encodeURIComponent($scope.tag));
 
                 window.open(link,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');
             };
