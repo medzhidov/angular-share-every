@@ -20,7 +20,7 @@ For share each element has unique:
 
 ## How to use
 If you use jQuery or naked javascript: you should add main.js for your html.
-If you use AngularJS: you should  add directive... In file with directives!)
+If you use AngularJS: you should  add directive from angular-directive.js... In file with directives!)
 
 Then add next attributes for element in order to create share on click for this element:
 
