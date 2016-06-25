@@ -19,7 +19,10 @@ For share each element has unique:
 - tags
 
 ## How to use
-Add next attributes for element in order to create share on click for this element:
+If you use jQuery or naked javascript: you should add main.js for your html.
+If you use AngularJS: you should  add directive... In file with directives!)
+
+Then add next attributes for element in order to create share on click for this element:
 
 > *share* - name of social network  
 **values**: vk, twitter, facebook, ondoclassniki, telegram, evernote
