@@ -18,7 +18,7 @@ For share each element has unique:
 - image
 - tags
 
-## Не бязательные зависимости
+## Optional depending
 ``font-awesome``
 
 ## How to use
