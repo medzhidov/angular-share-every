@@ -1,6 +1,6 @@
 {
   "name": "angular-share-every",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "create sharing for your application in some seconds",
   "main": "src/share-every.js",
   "scripts": {

@@ -22,6 +22,9 @@ For share each element has unique:
 ``font-awesome``
 
 ## How to use
+Include this module in your project by NPM:
+``npm install --save-dev angular-share-every``
+
 Just add this module (src/share-every.js) in your angular-application:
 
 ``<script src="./node_modules/src/share-every.js"></script>``
