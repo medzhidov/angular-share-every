@@ -1,0 +1,28 @@
+{
+  "name": "angular-share-every",
+  "version": "0.0.1",
+  "description": "create sharing for your application in some seconds",
+  "main": "src/share-every.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dslpp056193/angular-share-every.git"
+  },
+  "keywords": [
+    "angular",
+    "share-js",
+    "sharing",
+    "plugin"
+  ],
+  "author": "medzhidov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dslpp056193/angular-share-every/issues"
+  },
+  "homepage": "https://github.com/dslpp056193/angular-share-every#readme",
+  "devDependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}

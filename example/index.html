@@ -1,0 +1,133 @@
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>Share-every</title>
+
+    <!-- FOR THIS EXAMPLE-PAGE -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- END FOR THIS EXAMPLE-PAGE -->
+
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src="../src/share-every.js"></script>
+    <script>
+        'use strict';
+
+        var app = angular.module('app', ['share-every']);
+
+        app.controller('appCtrl', function($scope){
+            $scope.icons = {
+                vk: '<span>share vkontakte</span>',
+                facebook: '<span>share facebook</span>'
+            };
+        });
+    </script>
+
+    <style>
+        .styled{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+        }
+        .styled > div{
+            min-width: 30px;
+            padding: 0 10px;
+            height: 30px;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: center;
+            -ms-align-items: center;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            -webkit-transition: .3s ease;
+            -o-transition: .3s ease;
+            transition: .3s ease;
+        }
+        .styled > div svg *{
+            fill: #fff;
+            -webkit-transition: .3s ease;
+            -o-transition: .3s ease;
+            transition: .3s ease;
+        }
+
+        .styled > div:hover{
+            background-color: #7dc5ff !important;
+        }
+        
+        .styled > div.vk{background-color: #45668e;}
+        .styled > div.facebook{background-color: #3b5998;}
+        .styled > div.twitter{background-color: #00aced;}
+        .styled > div.telegram{background-color: #63a3dd;}
+        .styled > div.evernote{background-color: #9ac24e;}
+        .styled > div.odnoklassniki{background-color: #f2720c;}
+    </style>
+</head>
+<body ng-controller="appCtrl">
+    <div class="container">
+        <h1 class="page-header">Example of share-every.js</h1>
+
+        <h2>Simple example</h2>
+        <p>Code:</p>
+        
+        <figure>
+            <pre>
+&lt;div share=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+     share-title=&quot;Share-every&quot; 
+     share-description=&quot;Module share-every for Angular&quot; 
+     share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+     share-tag=&quot;Share-plugin&quot;&gt;&lt;/div&gt;</pre>
+        </figure>
+        
+        <p>Working example (without custom styles):</p>
+
+        <div share="https://github.com/dslpp056193/angular-share-every" share-title="Share-every" share-description="Module share-every for Angular" share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png" share-tag="Share-plugin"></div>
+        <br>
+        <p>Working example (with custom styles):</p>
+
+        <div class="styled" share="https://github.com/dslpp056193/angular-share-every" share-title="Share-every" share-description="Module share-every for Angular" share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png" share-tag="Share-plugin"></div>
+       
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h2>Example with custom icons</h2>
+        <p>Template code:</p>
+        
+        <figure>
+            <pre>
+&lt;div share=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+     share-title=&quot;Share-every&quot; 
+     share-description=&quot;Module share-every for Angular&quot; 
+     share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+     share-tag=&quot;Share-plugin&quot;
+     share-icons=&quot;icons&quot;&gt;&lt;/div&gt;</pre>
+        </figure>
+        <br>
+        <p>Js code in controller:</p>
+        <figure>
+            <pre>
+$scope.icons = { 
+    vk: '&lt;span&gt;share vkontakte&lt;/span&gt;',
+    facebook: '&lt;span&gt;share facebook&lt;/span&gt;'
+};</pre>
+        </figure>
+        
+        <p>Working example (with same custom styles):</p>
+
+        <div class="styled" share="https://github.com/dslpp056193/angular-share-every" share-title="Share-every" share-description="Module share-every for Angular" share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png" share-tag="Share-plugin" share-icons="icons"></div>
+        
+        <br>
+        <br>
+</body>
+</html>

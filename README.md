@@ -1,4 +1,4 @@
-# Share javascript plugin, for share everything
+# Share-every - javascript angular module, for share everything
 ``custom share plugin``
 
 Supported:
@@ -18,16 +18,16 @@ For share each element has unique:
 - image
 - tags
 
+## Не бязательные зависимости
+``font-awesome``
+
 ## How to use
-If you use jQuery or naked javascript: you should add main.js for your html.
-If you use AngularJS: you should  add directive from angular-directive.js... In file with directives!)
+Just add this module (src/share-every.js) in your angular-application:
+``<script src="./node_modules/src/share-every.js"></script>``
 
-Then add next attributes for element in order to create share on click for this element:
+Then add next attributes for element in order to create sharing:
 
-> *share* - name of social network  
-**values**: vk, twitter, facebook, ondoclassniki, telegram, evernote
-
-> *share-url* - link of page for share  
+> *share* - link of page for share  
 **values**: link
 
 > *share-title* - title for share  

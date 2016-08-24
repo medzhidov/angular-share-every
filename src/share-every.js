@@ -1,11 +1,34 @@
 /**
- * SHARE-EVERITHING PLUGIN: MIT LICENSE
+ * SHARE-JS: plugin for angular.
  */
 
-tApp.directive('ngShare', [function(){
+angular.module('share-every', []);
+
+angular.module('share-every', []).directive('share', ['$sce', function($sce){
     return {
-        restrict: 'EA',
-        link: function ($scope, element, attrs){
+        restrict: 'A',
+        template: '<div ng-class="key" ng-repeat="(key, item) in icons track by $index" ng-bind-html="item" ng-click="openLink(key)"></div>',
+        scope: {
+            url: "@share",
+            title: "@shareTitle",
+            subtitle: "@shareSubtitle",
+            text: "@shareDescription",
+            image: "@shareImage",
+            tag: "@shareTag",
+            custom_icons: "=shareIcons"
+        },
+        link: function ($scope){
+            var _ = function(selector){return document.querySelector(selector)};
+
+            var options_default = {
+                url: location.href,
+                title: document.querySelector('title').innerHTML || '',
+                subtitle: '',
+                image: ( _('meta[name="description"]') != null ) ? _('meta[name="description"]').getAttribute('content') : '',
+                text: ( _('meta[property="og:image]') != null ) ? _('meta[property="og:image"]').getAttribute('content') : '',
+                tag: ''
+            };
+
             var socials = {
                 vk: 'https://vk.com/share.php?url=$URL$&title=$TITLE$&description=$TEXT$&image=$IMAGE$',
                 facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=$TITLE$&caption=$SUBTITLE$&description=$TEXT$&redirect_uri=https://www.facebook.com&display=popup',
@@ -16,7 +39,7 @@ tApp.directive('ngShare', [function(){
             };
 
 
-            $scope.icons = {
+            $scope.icons = $scope.custom_icons || {
                 vk: '<span class="fa fa-vk"></span>',
                 facebook: '<span class="fa fa-facebook"></span>',
                 twitter: '<span class="fa fa-twitter"></span>',
@@ -25,29 +48,25 @@ tApp.directive('ngShare', [function(){
                 odnoklassniki: '<span class="fa fa-odnoklassniki"></span>',
             };
 
+            // trust all icons
+            for ( var icon in $scope.icons ){
+                $scope.icons[icon] = $sce.trustAsHtml( $scope.icons[icon] );
+            }
+
 
             $scope.openLink = function(social){
                 var link = socials[social];
                 console.log($scope.url);
 
-                if ($scope.url)    link = link.replace('$URL$', encodeURIComponent($scope.url));
-                if ($scope.title)  link = link.replace('$TITLE$', encodeURIComponent($scope.title));
-                if ($scope.subtitle)  link = link.replace('$SUBTITLE$', encodeURIComponent($scope.subtitle));
-                if ($scope.text)   link = link.replace('$TEXT$', encodeURIComponent($scope.text));
-                if ($scope.image)  link = link.replace('$IMAGE$', encodeURIComponent($scope.image));
-                if ($scope.tag)    link = link.replace('$TAG$', encodeURIComponent($scope.tag));
+                link = link.replace('$URL$', encodeURIComponent($scope.url)) || options_default.url;
+                link = link.replace('$TITLE$', encodeURIComponent($scope.title)) || options_default.title;
+                link = link.replace('$SUBTITLE$', encodeURIComponent($scope.subtitle)) || options_default.subtitle;
+                link = link.replace('$TEXT$', encodeURIComponent($scope.text))     || options_default.text;
+                link = link.replace('$IMAGE$', encodeURIComponent($scope.image))    || options_default.image;
+                link = link.replace('$TAG$', encodeURIComponent($scope.tag))      || options_default.tag;
 
                 window.open(link,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');
             };
-        },
-        template: '<share ng-class="key" ng-repeat="(key, item) in icons" ng-bind-html="item | html" ng-click="openLink(key)"></share>',
-        scope: {
-            url: "@ngShare",
-            title: "@ngShareTitle",
-            subtitle: "@ngShareSubtitle",
-            text: "@ngShareDescription",
-            image: "@ngShareImage",
-            tag: "@ngShareTag"
         }
     };
 }]);
