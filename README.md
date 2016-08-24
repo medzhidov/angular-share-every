@@ -23,6 +23,7 @@ For share each element has unique:
 
 ## How to use
 Just add this module (src/share-every.js) in your angular-application:
+
 ``<script src="./node_modules/src/share-every.js"></script>``
 
 Then add next attributes for element in order to create sharing:

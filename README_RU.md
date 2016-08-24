@@ -23,6 +23,7 @@
 
 ## Как пользоваться
 Просто добавьте этот модуль (./node_modules/src/share-every.js) в свое angular-приложение:
+
 ``<script src="./node_modules/src/share-every.js"></script>``
 
 Для работы плагина добавить следующие атрибуты элементу:
