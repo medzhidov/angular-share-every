@@ -23,6 +23,7 @@
 
 ## Как пользоваться
 Добавьте данный модуль в свой проект при помощи NPM:
+
 ``npm install --save-dev angular-share-every``
 
 Просто добавьте этот модуль (./node_modules/src/share-every.js) в свое angular-приложение:
