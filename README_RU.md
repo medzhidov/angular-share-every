@@ -53,5 +53,5 @@
 ## Пример
 
 ```Html
-<button share="vk" share-title="Просто" share-text="ПОДЕЛИСЬ!" share-url="https://github.com/dslpp056193/angular-share-every">Поделиться!</button>
+<div share="https://github.com/dslpp056193/angular-share-every" share-title="Share-every" share-description="Module share-every for Angular" share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png" share-tag="Share-plugin"></div>
 ```

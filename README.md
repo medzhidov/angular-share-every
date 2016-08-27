@@ -54,5 +54,5 @@ Then add next attributes for element in order to create sharing:
 ## Example
 
 ```Html
-<button share="vk" share-title="Just" share-text="SHARE IT!" share-url="https://github.com/dslpp056193/share-everithing">Share!</button>
+<div share="https://github.com/dslpp056193/angular-share-every" share-title="Share-every" share-description="Module share-every for Angular" share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png" share-tag="Share-plugin"></div>
 ```
