@@ -31,7 +31,7 @@ angular.module('share-every', []).directive('share', ['$sce', function($sce){
 
             var socials = {
                 vk: 'https://vk.com/share.php?url=$URL$&title=$TITLE$&description=$TEXT$&image=$IMAGE$',
-                facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=$TITLE$&caption=$SUBTITLE$&description=$TEXT$&redirect_uri=https://www.facebook.com&display=popup',
+                facebook: 'https://www.facebook.com/dialog/feed?app_id=1514286898864851&link=$URL$&name=$TITLE$&caption=$SUBTITLE$&description=$TEXT$&picture=$IMAGE$&display=popup',
                 twitter: 'https://twitter.com/intent/tweet?url=$URL$&text=$TEXT$&hashtags=$TAG$',
                 telegram: 'https://telegram.me/share/url?url=$URL$&text=$TEXT$',
                 evernote: 'http://www.evernote.com/clip.action?url=$URL$&title=$TITLE$',
@@ -56,14 +56,15 @@ angular.module('share-every', []).directive('share', ['$sce', function($sce){
 
             $scope.openLink = function(social){
                 var link = socials[social];
-                console.log($scope.url);
+                
+                var image = ( $scope.image[0] == '/' ) ? location.origin + $scope.image : location.href.split('#')[0] + $scope.image;
 
-                link = link.replace('$URL$', encodeURIComponent($scope.url)) || options_default.url;
-                link = link.replace('$TITLE$', encodeURIComponent($scope.title)) || options_default.title;
-                link = link.replace('$SUBTITLE$', encodeURIComponent($scope.subtitle)) || options_default.subtitle;
-                link = link.replace('$TEXT$', encodeURIComponent($scope.text))     || options_default.text;
-                link = link.replace('$IMAGE$', encodeURIComponent($scope.image))    || options_default.image;
-                link = link.replace('$TAG$', encodeURIComponent($scope.tag))      || options_default.tag;
+                link = link.replace('$URL$', encodeURIComponent($scope.url || options_default.url));
+                link = link.replace('$TITLE$', encodeURIComponent($scope.title || options_default.title));
+                link = link.replace('$SUBTITLE$', encodeURIComponent($scope.subtitle || options_default.subtitle));
+                link = link.replace('$TEXT$', encodeURIComponent($scope.text || options_default.text));
+                link = link.replace('$IMAGE$', encodeURIComponent(image || options_default.image));
+                link = link.replace('$TAG$', encodeURIComponent($scope.tag || options_default.tag));
 
                 window.open(link,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');
             };
