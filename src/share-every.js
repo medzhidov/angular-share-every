@@ -12,7 +12,7 @@ angular.module('share-every', []).directive('share', ['$sce', function($sce){
             url: "@share",
             title: "@shareTitle",
             subtitle: "@shareSubtitle",
-            text: "@shareDescription",
+            text: "@shareText",
             image: "@shareImage",
             tag: "@shareTag",
             custom_icons: "=shareIcons"
