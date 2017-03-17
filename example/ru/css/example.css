@@ -1,0 +1,84 @@
+[share].styled {
+  display: flex;
+  align-items: center;
+}
+[share].styled .share--element {
+  height: 50px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color .3s ease, transform .3s ease;
+  user-select: none;
+}
+[share].styled .share--element:not(:last-child) {
+  margin-right: 20px;
+}
+[share].styled .share--element.vkontakte {
+  background-color: #507299;
+}
+[share].styled .share--element.vkontakte:hover {
+  background-color: #7b99ba;
+}
+[share].styled .share--element.facebook {
+  background-color: #3b5998;
+}
+[share].styled .share--element.facebook:hover {
+  background-color: #5f7ec1;
+}
+[share].styled .share--element.twitter {
+  background-color: #00aced;
+}
+[share].styled .share--element.twitter:hover {
+  background-color: #3bc9ff;
+}
+[share].styled .share--element.telegram {
+  background-color: #63a3dd;
+}
+[share].styled .share--element.telegram:hover {
+  background-color: #a2c8eb;
+}
+[share].styled .share--element.evernote {
+  background-color: #9ac24e;
+}
+[share].styled .share--element.evernote:hover {
+  background-color: #bad687;
+}
+[share].styled .share--element.odnoklassniki {
+  background-color: #F6881F;
+}
+[share].styled .share--element.odnoklassniki:hover {
+  background-color: #f9af69;
+}
+[share].styled .share--element:active {
+  transform: scale(0.94);
+}
+[share].styled .share--element .share--icon span.fa,
+[share].styled .share--element .share--icon span.icon,
+[share].styled .share--element .share--icon svg {
+  width: 20px;
+  height: 20px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[share].styled .share--element .share--icon svg * {
+  fill: #fff;
+}
+[share].styled .share--element span.text {
+  margin-left: 15px;
+  font-size: 12px;
+}
+[share].styled .share--element span.share--count {
+  height: 100%;
+  padding: 0 0 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 17px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}

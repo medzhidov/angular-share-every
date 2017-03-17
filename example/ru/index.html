@@ -1,0 +1,347 @@
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>Share-every примеры для angular</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- end BOOTSTRAP -->
+
+    <link rel="stylesheet" href="css/example.css">
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src="../../src/angular-share-every.js"></script>
+    <script src="js/example.js"></script>
+</head>
+<body ng-controller="appCtrl">
+    <div class="container">
+        <h1 class="page-header">Пример работы share-every модуля для angular</h1>
+
+        <h2><b>Простой пример</b></h2>
+
+        <br>
+        
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                HTML <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                    <pre>
+&lt;div class="styled"
+    share
+    share-url=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+    share-title=&quot;Share-every&quot; 
+    share-text=&quot;Модуль share-every для Angular&quot; 
+    share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+    share-tag=&quot;Share-plugin&quot;&gt;
+&lt;/div&gt;</pre>
+                </figure>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        
+        <p>Рабочий пример (без пользовательских стилей):</p>
+        <blockquote>
+            <div share
+                share-url="https://github.com/dslpp056193/angular-share-every"
+                share-title="Share-every"
+                share-text="Module share-every for Angular"
+                share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png"
+                share-tag="Share-plugin">
+            </div>
+        </blockquote>
+
+       
+        <br>
+        <hr>
+        <br>
+
+        <h2><b>Простой пример с пользовательскими стилями</b></h2>
+
+        <br>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                HTML <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+&lt;div class="styled"
+    share
+    share-url=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+    share-title=&quot;Share-every&quot; 
+    share-text=&quot;Модуль share-every для Angular&quot; 
+    share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+    share-tag=&quot;Share-plugin&quot;&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <p>Рабочий пример:</p>
+        <blockquote>            
+            <div class="styled" share
+                share-url="https://github.com/dslpp056193/angular-share-every"
+                share-title="Share-every"
+                share-text="Module share-every for Angular"
+                share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png"
+                share-tag="Share-plugin">
+            </div>
+        </blockquote>
+
+       
+        <br>
+        <hr>
+        <br>
+
+        <h2><b>Пример с пользовательскими иконками</b></h2>
+        
+        <br>
+
+        <p>В качестве иконки можно вставить как текст, так и любой html-код</p>
+
+        <br>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                HTML <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+&lt;div class="styled"
+    share
+    share-url=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+    share-title=&quot;Share-every&quot; 
+    share-text=&quot;Модуль share-every для Angular&quot; 
+    share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+    share-tag=&quot;Share-plugin&quot;
+    share-icons=&quot;icons&quot;&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                JS в контроллере <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+$scope.icons = { 
+    vkontakte: 'репост в вк',
+    facebook: '&lt;img src="img/fb.png"&gt;'
+};</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <p>Рабочий пример (также с пользовательскими стилями):</p>
+        <blockquote>
+            <div class="styled" 
+                share
+                share-url="https://github.com/dslpp056193/angular-share-every"
+                share-title="Share-every"
+                share-text="Модуль share-every для Angular"
+                share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png"
+                share-tag="Share-plugin"
+                share-icons="icons">
+            </div>
+        </blockquote>
+        
+        <br>
+        <hr>
+        <br>
+
+        <h2><b>Пример со счетчиком</b></h2>
+
+        <br>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                HTML <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+&lt;div class="styled"
+    share
+    share-url=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+    share-title=&quot;Share-every&quot; 
+    share-text=&quot;Модуль share-every для Angular&quot; 
+    share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+    share-tag=&quot;Share-plugin&quot;
+    share-counter=&quot;social_counts&quot;&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                JS в контроллере <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+$scope.social_counts = {
+    twitter: 3,
+    facebook: 15
+};</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <p>Рабочий пример (также с пользовательскими стилями):</p>
+        <blockquote>
+            <div class="styled" 
+                share
+                share-url="https://github.com/dslpp056193/angular-share-every"
+                share-title="Share-every"
+                share-text="Модуль share-every для Angular"
+                share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png"
+                share-tag="Share-plugin"
+                share-counter="social_counts">
+            </div>
+        </blockquote>
+
+        <br>
+        <hr>
+        <br>
+
+        <h2><b>Пример с "одиночным расшариванием"</b></h2>
+
+        <br>
+
+        <p>
+            Т.е. подключаем на абсолютно любой тег функционал "поделиться" с любой соц.сетью.
+            <br>При этом не будет генерироваться список всех соц. сетей.
+        </p>
+
+        <br>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                HTML <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+&lt;div
+    share
+    share-url=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+    share-title=&quot;Share-every&quot; 
+    share-text=&quot;Модуль share-every для Angular&quot; 
+    share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+    share-tag=&quot;Share-plugin&quot;&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <p>Рабочий пример:</p>
+        <blockquote>
+            <div
+                share-single="vkontakte"                
+                share-title="Share-every"
+                share-text="Модуль share-every для Angular"
+                share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png"
+                share-tag="Share-plugin">
+                Нажми на меня, чтобы поделиться в Вконтакте
+            </div>
+        </blockquote>
+
+        <h2><b>Пример с "одиночным расшариванием" и счетчиком</b></h2>
+
+        <br>
+
+        <p>
+            Для этого в контролле достаточно создать переменную с количеством репостов и передать её в атрибут "share-counter"
+        </p>
+
+        <br>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                HTML <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+&lt;div
+    share
+    share-url=&quot;https://github.com/dslpp056193/angular-share-every&quot; 
+    share-title=&quot;Share-every&quot; 
+    share-text=&quot;Модуль share-every для Angular&quot; 
+    share-image=&quot;https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png&quot; 
+    share-tag=&quot;Share-plugin&quot;
+    share-counter=&quot;vkontakte_counts&quot;&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="true" ng-init="show = false;">
+            <div class="panel-heading">
+                JS в контроллере <button type="button" class="btn btn-default btn-xs spoiler-trigger" ng-click="show = !show;">показать\скрыть</button>
+            </div>
+            <div class="panel-collapse collapse" ng-class="{in: show, out: !show}">
+                <div class="panel-body">
+                   <figure>
+                        <pre>
+$scope.vkontakte_counts = 999;</pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <p>Рабочий пример:</p>
+        <blockquote>
+            <div
+                share-single="vkontakte"                
+                share-title="Share-every"
+                share-text="Модуль share-every для Angular"
+                share-image="https://cdn4.iconfinder.com/data/icons/mayssam/512/share-128.png"
+                share-tag="Share-plugin"
+                share-counter="vkontakte_counts">
+                Нажми на меня, чтобы поделиться в Вконтакте<br>
+                На меня нажали уже {{vkontakte_counts}}
+            </div>
+        </blockquote>
+        
+        <br>
+        <br>
+</body>
+</html>
