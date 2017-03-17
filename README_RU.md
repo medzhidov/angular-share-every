@@ -27,7 +27,7 @@ yarn add angular-share-every
 You can just add a script from CDN:
 
 ```
-<script src="https://cdn.rawgit.com/dslpp056193/angular-share-every/203fdb5b/src/share-every.js"></script>
+<script src="https://cdn.rawgit.com/dslpp056193/angular-share-every/4d4d1c62/src/angular-share-every.js"></script>
 ```
 
 ### Подключение модуля
