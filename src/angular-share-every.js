@@ -1,5 +1,8 @@
 /**
- * SHARE-JS: plugin for angular.
+ * @name: Angular Share-every
+ * @description: module for angular. 
+ * @license: MIT
+ * @author: https://github.com/dslpp056193
  */
 
 angular.module('share-every', []);
