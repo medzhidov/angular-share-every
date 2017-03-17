@@ -12,6 +12,9 @@ Supported social nets:
 -  Telegram
 -  Evernote
 
+## Demo
+[Live demo](https://dslpp056193.github.io/angular-share-every/example/en/index.html)
+
 ## Installation
 
 ### NPM

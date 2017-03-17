@@ -10,6 +10,9 @@
 -  Telegram
 -  Evernote
 
+## Демо
+[Живое демо](https://dslpp056193.github.io/angular-share-every/example/ru/index.html)
+
 ## Подключение
 
 ### NPM
